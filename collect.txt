@@ -1,0 +1,52 @@
+mysql> create table collect(
+    -> id int auto_increment primary key,
+    -> shoucang varchar(30) not null);
+Query OK, 0 rows affected (0.46 sec)
+
+mysql> insert into collect(shoucang)
+    -> values("NARS"),
+    -> ("GIORGIO ARMANI"),
+    -> ("MAC"),
+    -> ("GIVENCHY"),
+    -> ("ONLY"),
+    -> ("CHRISTIAN LOUBOUTIN");
+Query OK, 6 rows affected (0.12 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from collect;
++----+---------------------+
+| id | shoucang            |
++----+---------------------+
+|  1 | NARS                |
+|  2 | GIORGIO ARMANI      |
+|  3 | MAC                 |
+|  4 | GIVENCHY            |
+|  5 | ONLY                |
+|  6 | CHRISTIAN LOUBOUTIN |
++----+---------------------+
+6 rows in set (0.00 sec)
+
+mysql> delete from collect where shoucang="MAC";
+Query OK, 1 row affected (0.20 sec)
+
+mysql> select * from collect;
++----+---------------------+
+| id | shoucang            |
++----+---------------------+
+|  1 | NARS                |
+|  2 | GIORGIO ARMANI      |
+|  4 | GIVENCHY            |
+|  5 | ONLY                |
+|  6 | CHRISTIAN LOUBOUTIN |
++----+---------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from collect where id=4;
++----+----------+
+| id | shoucang |
++----+----------+
+|  4 | GIVENCHY |
++----+----------+
+1 row in set (0.00 sec)
+
+mysql>
